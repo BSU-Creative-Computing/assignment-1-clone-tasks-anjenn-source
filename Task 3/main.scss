@@ -1,0 +1,89 @@
+$item-names: '1', '2', '3', '4';
+$sizes: 70px, 80px, 90px, 100px;
+$bgcolor: #8ccff7;
+$item-color: #4e89ae, #43658b, #ed6663, #ffa372;
+
+@mixin bpoint ($minwidth, $maxwidth) { 
+    @media screen and (min-width: $minwidth) and (max-width: $maxwidth) {
+        @content;
+    }
+}
+
+@mixin cxy { 
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e2eff1;
+}
+
+header {
+    background: $bgcolor url("https://via.placeholder.com/400") no-repeat center center;
+    height: 400px;
+
+    @include bpoint(0px, 480px){ 
+        background-image: url("https://via.placeholder.com/200");
+        height: 200px;
+    }
+    @include bpoint(481px, 800px){ 
+        background-image: url("https://via.placeholder.com/300");
+        height: 300px;
+    }
+}
+    
+.container {
+    margin: 50px 0;
+}
+
+.rows {
+    .item {
+        @include cxy(); 
+        display: block;
+        width: 100%;
+        height: 40px;
+    }
+}
+
+.circles {
+    display: flex;
+    .item {
+        border-radius: 50%;
+        margin: 5px;
+    }
+
+    @include cxy(); 
+
+    @include bpoint(0px, 800px) { 
+        flex-direction: column;
+    }
+}
+
+.item {
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+        background-color: #444;
+        color: black;
+    }
+}
+
+@each $name in $item-names {
+    $i: index($item-names, $name);
+
+    .item-#{$name} {
+        width: nth($sizes, $i);
+        height: nth($sizes, $i);
+        background-color: nth($item-color, $i);
+    }
+}
+
+footer {
+    height: 50px;
+    background-color: $bgcolor;
+}
