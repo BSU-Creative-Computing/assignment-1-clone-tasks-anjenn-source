@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #eeeeee;
+}
+
+/* Navigation bar */
+nav {
+    background: #1e90ff;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    
+}
+
+.menu {
+    display: none;
+}
+
+/* Title */
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 30px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+nav ul {
+    margin-right: 20px;
+    position: absolute;
+    margin-left: 800px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 5px;
+    border-radius: 3px;
+}
+
+.search-bar {
+    height: 40px;
+    width: 240px;
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-bar input {
+    height: 100%;
+    width: 300px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.movie-item p {
+    margin-bottom: 20px; 
+}
+
+.movie-item .info-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.info-button button {
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #1e90ff;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1e90ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Image padding */
+
+.avenger-padding {
+    width: 100%;
+}
+
+.avenger-text {
+    padding: 10px 20px 45px;
+}
+
+
+.image-padding {
+    width: 100%;
+}
+
+/* Text padding for movie description */
+.text-padding {
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    order: 6;
+    color: black;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* Flexbox for movie items */
+.movie-item {
+    flex: 1;
+    max-width: 200px;
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgb(128, 128, 128);
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+.avenger-item {
+    position: relative;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgb(128, 128, 128);
+}
+
+.avenger-item .info-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.avenger-item h2,
+.avenger-item p {
+    margin-bottom: 20px;
+}
+
+/* Flexbox for the first movie */
+.movie-left {
+    margin: 20px 3px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: top;
+    background: white;
+}
+
+/* Flexbox for other movies */
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.first, .second {
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+/* Container for flexboxes */
+.content-container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0px 150px 0 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    box-sizing: border-box;
+    align-content: flex-start;
+}
+
+/* Media queries */
+@media screen and (max-width: 2056px) {
+    .content-container {
+        flex-direction: row;
+        max-width: 1080px;
+    }
+
+    nav ul {
+        position: absolute;
+        margin-left: 1150px;
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .content-container {
+        flex-direction: row;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .first, .second {
+        max-width: 800px;
+        flex-direction: row;
+    }
+
+    .movie-left {
+        max-width: 1000px;
+    }
+
+    .movie-item {
+        max-width: 800px;
+    }
+
+    .movie-list {
+        width: 100%;
+    }
+
+    nav ul {
+        position: absolute;
+        margin-left: 930px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .content-container {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .first, .second {
+        flex-direction: column;
+        max-width: 300px;
+    }
+
+    .movie-list {
+        max-width: 300px;
+   
+    }
+
+    .movie-item {
+        min-height: 600px;
+        max-width: 400px;
+    }
+
+    nav ul {
+        position: absolute;
+        margin-left: 730px;
+    }
+
+}
+
+
+@media screen and (max-width: 800px) and (min-width: 481px) {
+    .content-container {
+        flex-direction: column;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .movie-left {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+
+    .movie-list {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .first, .second {
+        max-width: 790px;
+        flex-direction: row;
+    }
+
+    .movie-item {
+        width: 100%;
+        max-width: 400px !important;
+        height: 100%;
+        min-height: 500px;
+        margin: 10px;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    ul {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        justify-self: right;
+        margin: 25px 10px;
+        padding-left: 200px;
+        font-size: 20px;
+
+    }
+
+    .menu p {
+        color: white;
+        font-weight: 900;
+        padding-left: 250px;
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .content-container {
+        flex-direction: column;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .movie-left {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+
+    .movie-list {
+        width: 100%;
+        max-width: 430px;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .first, .second {
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-width: 480px;
+    }
+
+    .movie-item {
+        width: 100%;
+        max-width: 480px !important;
+        margin: 10px;
+        flex-direction: column;
+        min-height: 800px;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    ul {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        justify-self: right;
+        margin: 25px 10px;
+        padding-left: 170px;
+        font-size: 20px;
+
+    }
+
+    .menu p {
+        color: white;
+        font-weight: 900;
+    }
+
+
+}
